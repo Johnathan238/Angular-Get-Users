@@ -8,7 +8,8 @@ import { Users } from '../interface/users-interface';
 })
 export class UsersServiceService {
   usersUrl = `https://reqres.in/api/users`
-  Users:BehaviorSubject<any> = new BehaviorSubject('');
+  // Users:BehaviorSubject<any> = new BehaviorSubject('');
+  Users: any
   constructor(private Http: HttpClient) { }
 
   // getUsers(): Observable<any>{
@@ -22,5 +23,9 @@ export class UsersServiceService {
 
   getUsers(): Observable<Users[]>{
     return this.Http.get<Users[]>(this.usersUrl)
+      .pipe(map(data => {
+        this.Users.next(data)
+        return this.Users
+    }))
   }
 }
