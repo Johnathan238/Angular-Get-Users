@@ -11,12 +11,16 @@ export class UsersServiceService {
   Users:BehaviorSubject<any> = new BehaviorSubject('');
   constructor(private Http: HttpClient) { }
 
-  getUsers(): Observable<any>{
-    return this.Http.get<any>(this.usersUrl)
-      .pipe(map(data => {
-        this.Users.next(data.data)
-        return this.Users
-      }))
-  }
+  // getUsers(): Observable<any>{
+  //   return this.Http.get<any>(this.usersUrl)
+  //     .pipe(map(data => {
+  //       this.Users.next(data.data)
+  //       return this.Users
+  //     }))
+  // }
 
+
+  getUsers(): Observable<Users[]>{
+    return this.Http.get<Users[]>(this.usersUrl)
+  }
 }

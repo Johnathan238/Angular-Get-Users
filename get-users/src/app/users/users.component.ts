@@ -15,12 +15,19 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
     // this.getUsers()
     // console.table(this.users)
-    this.userService.getUsers()
-    .subscribe((data: any) => {
-      console.table(data)
-      this.users = data.value
-    })
+    // this.userService.getUsers()
+    // .subscribe((data: any) => {
+    //   console.table(data)
+    //   this.users = data.value
+    // })
 
+    this.userService.getUsers()
+    .subscribe((response: any) => {
+      response.results.forEach((result: any) => {
+        console.log(result);
+        this.users.push(result)
+      })
+    })
   }
 
   // getUsers(){
