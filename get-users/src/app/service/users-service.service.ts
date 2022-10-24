@@ -22,10 +22,7 @@ export class UsersServiceService {
 
 
   getUsers(): Observable<Users[]>{
-    return this.Http.get<Users[]>(this.usersUrl)
-      .pipe(map(data => {
-        this.Users.next(data)
-        return this.Users
-    }))
+    return this.Http.get<any>(this.usersUrl)
+      .pipe(map(res => res.data))
   }
 }

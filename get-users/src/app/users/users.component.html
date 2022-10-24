@@ -1,3 +1,4 @@
 <ul class="list-group" *ngFor="let user of users; let i = index">
-  <li class="list-group-item">{{user.id}}</li>
+  <img [src]="user.avatar" />
+  <li class="list-group-item">{{user.first_name}}, {{user.last_name}} - {{user.email}}</li>
 </ul>

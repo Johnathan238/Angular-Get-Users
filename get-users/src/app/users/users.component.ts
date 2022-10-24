@@ -40,7 +40,7 @@ export class UsersComponent implements OnInit {
 
   getUserData(){
     this.userService.getUsers().subscribe((response: any) => {
-    console.log(response);
+    console.table(response);
     this.users.push(...response)
     // console.log(this.posts);
   })
