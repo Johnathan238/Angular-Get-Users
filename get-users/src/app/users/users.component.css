@@ -4,11 +4,21 @@
 }
 
 .media-object{
+  background-color: #4C33FF;
   border: 5px #4C33FF;
   border-style: solid;
   border-radius: 5px;
 }
 
 .user-info{
-  border-left: 5px solid #4C33FF;
+  border-bottom: 5px solid #D133FF;
+}
+
+
+.media-object:hover {
+  transform: scale(1);;
+  background-color: #0d1117;
+  color: rgb(255, 255, 255);
+  border: 1vmin solid #D133FF;
+  box-sizing: initial;
 }
