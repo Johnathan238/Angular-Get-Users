@@ -8,19 +8,10 @@ import { Users } from '../interface/users-interface';
 })
 export class UsersServiceService {
   usersUrl = `https://reqres.in/api/users`
-  // Users:BehaviorSubject<any> = new BehaviorSubject('');
   Users: any
   constructor(private Http: HttpClient) { }
 
-  // getUsers(): Observable<any>{
-  //   return this.Http.get<any>(this.usersUrl)
-  //     .pipe(map(data => {
-  //       this.Users.next(data.data)
-  //       return this.Users
-  //     }))
-  // }
-
-
+//** Mapping the API to get the nested data **/
   getUsers(): Observable<Users[]>{
     return this.Http.get<any>(this.usersUrl)
       .pipe(map(res => res.data))

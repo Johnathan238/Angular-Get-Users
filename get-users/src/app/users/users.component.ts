@@ -15,28 +15,7 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
     this.getUserData()
     console.table(this.users)
-    // this.userService.getUsers()
-    // .subscribe((data: any) => {
-    //   console.table(data)
-    //   this.users = data.value
-    // })
-
-    // this.userService.getUsers()
-    // .subscribe((response: any) => {
-    //   response.results.forEach((result: any) => {
-    //     console.log(result);
-    //     this.users.push(result)
-    //   })
-    // })
   }
-
-  // getUsers(){
-  //   this.userService.getUsers()
-  //   .subscribe((data: any) => {
-  //     console.table(data)
-  //     this.users = data.value
-  //   })
-  // }
 
   getUserData(){
     this.userService.getUsers().subscribe((response: any) => {
