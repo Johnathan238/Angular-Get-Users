@@ -1,4 +1,11 @@
-<ul class="list-group" *ngFor="let user of users; let i = index">
-  <img [src]="user.avatar" />
-  <li class="list-group-item">{{user.first_name}}, {{user.last_name}} - {{user.email}}</li>
-</ul>
+<div class="media" *ngFor="let user of users; let i = index">
+  <div class="media-body">
+    <!-- <img class="media-object" [src]="user.avatar"> -->
+    <h4 class="media-heading">
+      <img class="media-object" [src]="user.avatar">
+      <strong class="user-name">{{user.first_name}}, {{user.last_name}}</strong>
+    </h4>
+
+    <p class="user-info"> Full name ~ {{user.first_name}}, {{user.last_name}} - Email ~ {{user.email}}</p>
+  </div>
+</div>
